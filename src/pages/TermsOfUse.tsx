@@ -3,7 +3,7 @@ export default function TermsOfUse() {
     <div className="page legal">
       <div className="card legalCard">
         <h1>Terms of Use</h1>
-        <p className="legal__updated">Last updated: March 2025</p>
+        <p className="legal__updated">Last updated: March 2026</p>
 
         <section>
           <h2>Agreement</h2>
@@ -22,6 +22,25 @@ export default function TermsOfUse() {
             <li>Use the App only for lawful purposes and in accordance with these terms.</li>
             <li>Not circumvent, disable, or interfere with the app-shielding or task-completion features.</li>
             <li>Comply with all applicable laws and Apple&apos;s App Store terms.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Screen Time API and Family Controls</h2>
+          <p>
+            Touch Grass may use Apple&apos;s Screen Time APIs (including Family Controls, Managed Settings, and Device Activity) to apply app shielding based on your configuration.
+            These features require system authorization.
+          </p>
+          <ul>
+            <li>
+              <strong>Authorization</strong> — If you enable shielding, iOS will prompt for authorization. For child devices, a parent or guardian in the same Family Sharing group must approve the request. For individual use, the device owner must approve.
+            </li>
+            <li>
+              <strong>System-managed enforcement</strong> — Shielding and restrictions are enforced by iOS. The system may limit actions that could circumvent parental controls (for example, preventing removal of an authorized parental-control app while authorization is active).
+            </li>
+            <li>
+              <strong>Your responsibility</strong> — You are responsible for selecting which apps/categories/domains are shielded and for complying with applicable laws and policies when using these features.
+            </li>
           </ul>
         </section>
 

@@ -1,6 +1,8 @@
-import card1 from '../assets/card-1.svg';
-import card2 from '../assets/card-2.svg';
-import card3 from '../assets/card-3.svg';
+import screen1 from '../assets/landing/screen-1.png';
+import screen2 from '../assets/landing/screen-2.png';
+import screen3 from '../assets/landing/screen-3.png';
+import screen4 from '../assets/landing/screen-4.png';
+import screen5 from '../assets/landing/screen-5.png';
 import badgeAppStore from '../assets/badge-app-store.svg';
 import badgeGooglePlay from '../assets/badge-google-play.svg';
 
@@ -52,21 +54,21 @@ export default function Home() {
             </p>
           </section>
 
-          <div className="cardRail" id="features" aria-label="Feature previews (dummy images)">
+          <div className="cardRail" id="features" aria-label="App screenshots">
             <div className="cardRail__card">
-              <img src={card1} alt="Dummy preview 1" loading="lazy" />
+              <img src={screen1} alt="Pick distracting apps to lock." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--raised">
-              <img src={card2} alt="Dummy preview 2" loading="lazy" />
+              <img src={screen2} alt="Touch Grass welcome screen." loading="lazy" />
             </div>
             <div className="cardRail__card">
-              <img src={card3} alt="Dummy preview 3" loading="lazy" />
+              <img src={screen3} alt="Time spent on phone calculation screen." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--ghost" aria-hidden="true">
-              <img src={card1} alt="" loading="lazy" />
+              <img src={screen4} alt="" loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--ghost" aria-hidden="true">
-              <img src={card3} alt="" loading="lazy" />
+              <img src={screen5} alt="" loading="lazy" />
             </div>
           </div>
 

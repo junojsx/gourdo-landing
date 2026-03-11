@@ -6,6 +6,7 @@ const navItems = [
   { href: '#features', label: 'Features' },
   { href: '/privacy-policy', label: 'Privacy' },
   { href: '/terms-of-use', label: 'Terms' },
+  { href: '/data-deletion', label: 'Data deletion' },
 ] as const;
 
 export default function Navbar() {

@@ -3,7 +3,7 @@ export default function DataDeletion() {
     <div className="page legal">
       <div className="card legalCard">
         <h1>Data Deletion Instructions</h1>
-        <p className="legal__updated">Last updated: March 2025</p>
+        <p className="legal__updated">Last updated: March 2026</p>
 
         <section>
           <h2>Your data, your control</h2>
