@@ -3,8 +3,8 @@ import screen2 from '../assets/landing/screen-2.png';
 import screen3 from '../assets/landing/screen-3.png';
 import screen4 from '../assets/landing/screen-4.png';
 import screen5 from '../assets/landing/screen-5.png';
-import badgeAppStore from '../assets/badge-app-store.svg';
-import badgeGooglePlay from '../assets/badge-google-play.svg';
+// import badgeAppStore from '../assets/badge-app-store.svg';
+// import badgeGooglePlay from '../assets/badge-google-play.svg';
 
 
 export default function Home() {
@@ -36,12 +36,12 @@ export default function Home() {
           <div className="heroDownloads" id="download">
             <p className="heroDownloads__label">Get our app</p>
             <div className="heroDownloads__row">
-              <a className="storeBadge" href="#" aria-label="Get it on Google Play (dummy link)">
+              {/* <a className="storeBadge" href="#" aria-label="Get it on Google Play (dummy link)">
                 <img src={badgeGooglePlay} alt="" />
               </a>
               <a className="storeBadge" href="#" aria-label="Download on the App Store (dummy link)">
                 <img src={badgeAppStore} alt="" />
-              </a>
+              </a> */}
              
             </div>
           </div>

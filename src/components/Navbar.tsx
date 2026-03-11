@@ -63,9 +63,9 @@ export default function Navbar() {
           >
             <span aria-hidden="true">{theme === 'dark' ? '☀︎' : '☾'}</span>
           </button>
-          <a className="navLogin" href="#" aria-label="Download Touch Grass (dummy link)">
+          {/* <a className="navLogin" href="#" aria-label="Download Touch Grass (dummy link)">
             Download
-          </a>
+          </a> */}
         </div>
       </nav>
     </header>
