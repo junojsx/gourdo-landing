@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourdo — Smart Grocery Expiration Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #10A857;
+            --primary-dark: #047E52;
+            --accent: #F9843B;
+            --accent-light: #FFDCC4;
+            --background: #FAFAF8;
+            --surface: #FFFFFF;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --border: #E8E8E6;
+            --success: #22C55E;
+            --warning: #F97316;
+            --danger: #EF4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: var(--text-primary);
+            background: var(--background);
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-content .highlight {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .button-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .button-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .button-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 560px;
+            background: var(--text-primary);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 26px;
+            background: var(--text-primary);
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #F5F8F7 0%, #F0F5F3 100%);
+            border-radius: 36px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 16px 16px;
+        }
+
+        .screen-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .screen-header h3 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .item-card {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--warning);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .item-card.urgent {
+            border-left-color: var(--danger);
+        }
+
+        .item-card.fresh {
+            border-left-color: var(--success);
+        }
+
+        .item-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .item-days {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            background: var(--surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(16, 168, 87, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            background: var(--background);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .price-card {
+            background: var(--surface);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .price-card:hover {
+            box-shadow: 0 8px 24px rgba(16, 168, 87, 0.15);
+        }
+
+        .price-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .price-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price-card .period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .price-card li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .price-card li:last-child {
+            border-bottom: none;
+        }
+
+        .price-card li::before {
+            content: '\\2713';
+            margin-right: 0.75rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .benefits-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .benefit-stat {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .benefit-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 5rem 0 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .button-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-section .button-primary:hover {
+            background: var(--accent-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .phone-frame {
+                width: 200px;
+                height: 400px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .button-primary, .button-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span aria-hidden="true">🥬</span>
+                <span>Gourdo</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#benefits">Why Gourdo</a></li>
+            </ul>
+            <button class="cta-button">Get Started</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Never Waste Fresh Food <span class="highlight">Again</span></h1>
+            <p>Gourdo is your smart grocery companion. Track expiration dates with barcode scanning, OCR reading, and AI-powered recipe suggestions to use ingredients before they spoil.</p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">1M+</span>
+                    <span class="stat-label">Items Tracked</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Less Food Waste</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <button class="button-primary">Download for iOS</button>
+                <button class="button-secondary">Learn More</button>
+            </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="screen-header">
+                        <h3>Your Pantry</h3>
+                    </div>
+                    <div class="item-card urgent">
+                        <div class="item-name">Spinach</div>
+                        <div class="item-days">2 days left</div>
+                    </div>
+                    <div class="item-card">
+                        <div class="item-name">Cheddar Cheese</div>
+                        <div class="item-days">12 days left</div>
+                    </div>
+                    <div class="item-card fresh">
+                        <div class="item-name">Sourdough Bread</div>
+                        <div class="item-days">5 days left</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Everything You Need to Reduce Food Waste</h2>
+            <p>Smart tools designed to keep your groceries organized and your recipes inspired.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">📷</div>
+                <h3>Barcode Scanning</h3>
+                <p>Instantly scan product barcodes to auto-populate names and expiration dates. No manual typing required.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🔍</div>
+                <h3>OCR Date Reading</h3>
+                <p>Snap a photo of expiry dates on packaging. Our AI extracts the date automatically—even for hard-to-read text.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🍳</div>
+                <h3>AI Recipe Generator</h3>
+                <p>Get personalized recipe suggestions based on ingredients about to expire. Never wonder what to cook again.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🌱</div>
+                <h3>Produce Freshness Guide</h3>
+                <p>38 produce types with storage tips, ripeness signals, and storage pairing advice built in.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">📬</div>
+                <h3>Smart Notifications</h3>
+                <p>Get alerts when items are expiring soon. Customize notification timing and frequency to your preference.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">☁️</div>
+                <h3>Cross-Device Sync</h3>
+                <p>Your pantry follows you. Sync seamlessly across all your devices with one account.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="benefits-grid">
+            <div>
+                <h2>Why Choose Gourdo?</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Gourdo combines cutting-edge technology with practical grocery management to help you save money, reduce waste, and eat better.</p>
+
+                <div class="benefit-stat">
+                    <div class="benefit-stat-value">$1,000+</div>
+                    <div class="benefit-stat-label">Average annual savings per household</div>
+                </div>
+
+                <div class="benefit-stat">
+                    <div class="benefit-stat-value">38</div>
+                    <div class="benefit-stat-label">Produce types with expert storage tips</div>
+                </div>
+
+                <div class="benefit-stat">
+                    <div class="benefit-stat-value">Instant</div>
+                    <div class="benefit-stat-label">AI-powered recipe suggestions</div>
+                </div>
+            </div>
+
+            <div class="benefits-visual" aria-hidden="true">
+                <div style="text-align: center;">
+                    <div style="background: var(--accent-light); border-radius: 12px; padding: 3rem 2rem; display: inline-block;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">✓</div>
+                        <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary);">Smart. Simple. Sustainable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Start free with 20 items and 15 scans per month. Upgrade to Pro for unlimited everything.</p>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="price-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <div class="period">Forever</div>
+                <ul>
+                    <li>20 items in pantry</li>
+                    <li>15 scans/month</li>
+                    <li>3 recipes/month</li>
+                    <li>Recipe history</li>
+                    <li>Basic notifications</li>
+                </ul>
+                <button class="button-primary">Get Started</button>
+            </div>
+
+            <div class="price-card featured">
+                <h3>Pro</h3>
+                <div class="price">$4.99</div>
+                <div class="period">/month or $49.99/year</div>
+                <ul>
+                    <li>Unlimited items</li>
+                    <li>Unlimited scans</li>
+                    <li>Unlimited recipes</li>
+                    <li>Full recipe history</li>
+                    <li>All notification types</li>
+                    <li>7-day free trial</li>
+                </ul>
+                <button class="button-primary">Start Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Stop Wasting Food?</h2>
+        <p>Join thousands of households saving money and reducing waste with Gourdo. Start your free trial today—no credit card required.</p>
+        <button class="button-primary">Download Gourdo Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">What's New</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Gourdo. All rights reserved. Made with \\ud83e\\udd6c for a more sustainable kitchen.</p>
+        </div>
+    </footer>
+</body>
+</html>
