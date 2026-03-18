@@ -3,79 +3,253 @@ export default function TermsOfUse() {
     <div className="page legal">
       <div className="card legalCard">
         <h1>Terms of Use</h1>
-        <p className="legal__updated">Last updated: March 2026</p>
+        <p className="legal__updated">Effective Date: January 1, 2025</p>
 
         <section>
-          <h2>Agreement</h2>
+          <h2>PLEASE READ THESE TERMS CAREFULLY</h2>
           <p>
-            By downloading, installing, or using Touch Grass (&quot;the App&quot;), you agree to these Terms of Use.
-            If you do not agree, do not use the App.
+            By downloading, accessing, or using the Gourdo mobile application (&quot;App&quot;, &quot;Service&quot;, or
+            &quot;Application&quot;), you agree to be bound by these Terms of Use (&quot;Terms&quot;). If you do not agree
+            to all terms and conditions, you may not use this Service.
           </p>
         </section>
 
         <section>
-          <h2>Use of the App</h2>
+          <h2>Agreement to Terms</h2>
           <p>
-            Touch Grass provides task-based app shielding for iOS. You agree to:
+            Your use of Gourdo constitutes acceptance of these Terms of Use, our Privacy Policy, and any other policies or
+            guidelines we publish. We reserve the right to update these Terms at any time. Continued use of the Service
+            after updates constitutes acceptance of modified Terms.
           </p>
+        </section>
+
+        <section>
+          <h2>Description of Service</h2>
+          <p>Gourdo is a mobile application that helps users:</p>
           <ul>
-            <li>Use the App only for lawful purposes and in accordance with these terms.</li>
-            <li>Not circumvent, disable, or interfere with the app-shielding or task-completion features.</li>
-            <li>Comply with all applicable laws and Apple&apos;s App Store terms.</li>
+            <li>Track food items in their pantry and monitor expiration dates</li>
+            <li>Scan product barcodes to automatically populate product information</li>
+            <li>Use OCR (optical character recognition) to extract expiry dates from packaging</li>
+            <li>Receive push notifications about expiring items</li>
+            <li>Generate AI-powered recipes based on expiring ingredients</li>
           </ul>
         </section>
 
         <section>
-          <h2>Screen Time API and Family Controls</h2>
+          <h2>Eligibility &amp; User Accounts</h2>
+          <h3>Age Requirements</h3>
           <p>
-            Touch Grass may use Apple&apos;s Screen Time APIs (including Family Controls, Managed Settings, and Device Activity) to apply app shielding based on your configuration.
-            These features require system authorization.
+            You must be at least 13 years old (or the age of digital consent in your jurisdiction) to use Gourdo. If you are
+            under 18, you warrant that you have parental or guardian consent. We do not knowingly allow users under the
+            applicable age of consent to create accounts.
           </p>
+          <h3>Account Creation</h3>
+          <p>To access certain features of Gourdo, you must create an account by providing an email address and password. You agree to:</p>
           <ul>
-            <li>
-              <strong>Authorization</strong> — If you enable shielding, iOS will prompt for authorization. For child devices, a parent or guardian in the same Family Sharing group must approve the request. For individual use, the device owner must approve.
-            </li>
-            <li>
-              <strong>System-managed enforcement</strong> — Shielding and restrictions are enforced by iOS. The system may limit actions that could circumvent parental controls (for example, preventing removal of an authorized parental-control app while authorization is active).
-            </li>
-            <li>
-              <strong>Your responsibility</strong> — You are responsible for selecting which apps/categories/domains are shielded and for complying with applicable laws and policies when using these features.
-            </li>
+            <li>Provide accurate, current, and complete information</li>
+            <li>Maintain the confidentiality of your password and account credentials</li>
+            <li>Be responsible for all activities that occur under your account</li>
+            <li>Notify us immediately of any unauthorized access or breach</li>
+            <li>Not share your account credentials with others</li>
           </ul>
         </section>
 
         <section>
-          <h2>License</h2>
+          <h2>Intellectual Property Rights</h2>
+          <h3>Gourdo&apos;s Intellectual Property</h3>
           <p>
-            We grant you a limited, non-exclusive, non-transferable license to use Touch Grass on your own devices for personal use, subject to these terms.
+            All content in the Gourdo Service—including software, design, text, graphics, logos, images, and compilation—is
+            the property of Gourdo or its content providers and is protected by copyright, trademark, and other intellectual
+            property laws. You may not reproduce, modify, distribute, or create derivative works from Gourdo&apos;s intellectual
+            property without explicit written permission.
+          </p>
+          <h3>User-Generated Content</h3>
+          <p>
+            You retain ownership of any data you input into Gourdo (pantry items, notes, photos). By using Gourdo, you grant
+            us a non-exclusive, royalty-free, worldwide license to use, store, and process your data to provide the Service.
+            This does NOT grant us the right to sell your personal data or use it for purposes outside the Service.
+          </p>
+          <h3>AI-Generated Content</h3>
+          <p>
+            Recipes generated by Claude AI are provided &quot;as-is&quot; and may be used for personal consumption only. You may
+            not republish, commercialize, or claim ownership of AI-generated recipes. Gourdo is not responsible for the
+            accuracy, safety, or suitability of recipes.
           </p>
         </section>
 
         <section>
-          <h2>Disclaimer</h2>
+          <h2>Acceptable Use Policy</h2>
+          <p>You agree NOT to:</p>
+          <ul>
+            <li>Use Gourdo for any illegal purpose or in violation of any applicable laws</li>
+            <li>Attempt to gain unauthorized access to Gourdo, our servers, or other users&apos; accounts</li>
+            <li>Reverse engineer, decompile, or attempt to extract source code from the App</li>
+            <li>Use bots, scrapers, or automated tools to scrape data from Gourdo</li>
+            <li>Transmit malware, viruses, or other harmful code</li>
+            <li>Harass, threaten, defame, or impersonate others</li>
+            <li>Spam, flood, or conduct denial-of-service attacks against the Service</li>
+            <li>Modify, disable, or circumvent any security, technical protection, or content restriction features</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Subscription &amp; Payment Terms</h2>
+          <h3>Free vs. Pro Tiers</h3>
           <p>
-            The App is provided &quot;as is&quot; without warranties of any kind. We do not guarantee that the App will be error-free, secure, or suitable for every user. Use at your own risk.
+            Gourdo offers a Free tier with limited features (e.g., 15 scans/month, 3 recipes/month) and a Pro tier with
+            unlimited features. Feature limits are subject to change with notice.
+          </p>
+          <h3>Subscription &amp; Trial</h3>
+          <p>
+            We may offer a free trial period for Pro subscriptions. Free trials are non-renewable and subject to a one-per-user
+            limit. After the trial ends, your subscription will convert to a paid plan unless you cancel before the trial period ends.
+          </p>
+          <h3>Billing</h3>
+          <p>
+            Subscriptions are billed automatically through your device&apos;s app store (Apple App Store or Google Play Store). Charges
+            appear on your payment method on your subscription renewal date. You are responsible for maintaining current and accurate
+            billing information.
+          </p>
+          <h3>Cancellation</h3>
+          <p>
+            You may cancel your Pro subscription at any time through your device&apos;s app store settings. Cancellation takes effect at
+            the end of your current billing period. No refunds are provided for partial months or unused services, except where required
+            by law.
+          </p>
+          <h3>Price Changes</h3>          <p>
+            We reserve the right to change subscription prices at any time. Existing subscribers will be notified at least 30 days before
+            any price increase. Your continued subscription after a price change constitutes acceptance of the new price.
           </p>
         </section>
 
         <section>
-          <h2>Limitation of Liability</h2>
+          <h2>Disclaimers &amp; Limitations of Liability</h2>
+          <h3>&quot;AS-IS&quot; Service</h3>
           <p>
-            To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, or consequential damages arising from your use of the App.
+            Gourdo is provided &quot;as-is&quot; and &quot;as-available&quot; without warranties of any kind, express or implied. We do not
+            warrant that the Service will be uninterrupted, error-free, secure, or fit for any particular purpose. We specifically disclaim
+            any warranty of merchantability, fitness for a particular purpose, or non-infringement.
+          </p>
+          <h3>No Warranty on Accuracy</h3>
+          <p>
+            Gourdo relies on third-party services (Open Food Facts, Claude API, device sensors) to provide product information, recipes,
+            and expiry date estimates. We are not responsible for the accuracy, completeness, or reliability of data from these sources.
+            Recipes generated by AI are for informational purposes only and may not be nutritionally accurate or food-safe for all individuals.
+            Always use professional judgment when handling food.
+          </p>
+          <h3>Food Safety Disclaimer</h3>
+          <p>
+            IMPORTANT: Gourdo&apos;s freshness estimates are general guidelines and are NOT professional food safety advice. Expiration dates
+            and freshness windows vary based on storage conditions, food handling, and individual factors. Gourdo assumes NO LIABILITY for
+            food poisoning, allergic reactions, or illness caused by consuming expired or improperly stored food. Always follow official food
+            safety guidelines and consult a healthcare provider if you have concerns.
+          </p>
+          <h3>Limitation of Liability</h3>
+          <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, GOURDO AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR:</p>
+          <ul>
+            <li>Indirect, incidental, consequential, or punitive damages</li>
+            <li>Loss of profit, revenue, data, or goodwill</li>
+            <li>Business interruption or service downtime</li>
+            <li>Damages from unauthorized data access, even if we have been advised of the possibility</li>
+            <li>Even if limited remedies in these Terms fail their essential purpose</li>
+          </ul>
+          <h3>Cap on Liability</h3>
+          <p>
+            OUR TOTAL LIABILITY TO YOU FOR ANY CLAIM ARISING FROM OR RELATED TO THESE TERMS OR THE USE OF GOURDO SHALL NOT EXCEED THE AMOUNT
+            YOU PAID TO US IN THE 12 MONTHS PRECEDING THE CLAIM (OR $100, IF YOU HAVE NOT MADE ANY PAYMENTS).
           </p>
         </section>
 
         <section>
-          <h2>Changes</h2>
+          <h2>Indemnification</h2>
           <p>
-            We may modify these Terms of Use at any time. Continued use of the App after changes constitutes acceptance. We encourage you to review this page periodically.
+            You agree to defend, indemnify, and hold harmless Gourdo and its officers, directors, employees, and agents from any claims,
+            damages, losses, costs, or expenses (including attorney&apos;s fees) arising from or related to: (a) your use of Gourdo, (b) your
+            violation of these Terms, (c) your infringement of intellectual property rights, or (d) your data or conduct on the Service.
           </p>
         </section>
 
         <section>
-          <h2>Contact</h2>
+          <h2>Third-Party Services</h2>
           <p>
-            For questions about these terms, please contact us using the information provided in the App or on this website.
+            Gourdo integrates with third-party services including Open Food Facts (barcode lookups), Anthropic Claude API (recipe generation),
+            RevenueCat (subscription management), and Apple App Store &amp; Google Play (payment processing). We are not responsible for the
+            accuracy, reliability, or availability of third-party services. Your use of third-party services is governed by their terms and
+            privacy policies. We disclaim all liability for third-party service failures or data breaches.
+          </p>
+        </section>
+
+        <section>
+          <h2>Termination</h2>
+          <h3>Termination by You</h3>
+          <p>
+            You may delete your Gourdo account at any time through your account settings. Upon deletion, your personal data will be permanently
+            removed within 30 days per our Privacy Policy.
+          </p>
+          <h3>Termination by Gourdo</h3>
+          <p>
+            We may suspend or terminate your account immediately without notice if you: (a) violate these Terms, (b) engage in illegal activity,
+            (c) harass other users, (d) reverse-engineer the App, (e) attempt unauthorized access, or (f) create multiple accounts to circumvent
+            feature limits. Upon termination, all access to Gourdo is revoked.
+          </p>
+        </section>
+
+        <section>
+          <h2>Modifications to Service</h2>
+          <p>
+            We reserve the right to modify, update, or discontinue Gourdo or any feature at any time without liability. We will provide
+            reasonable notice of material changes (e.g., feature removal, service discontinuation) via email or in-app notification when possible.
+          </p>
+        </section>
+
+        <section>
+          <h2>Governing Law &amp; Dispute Resolution</h2>
+          <h3>Governing Law</h3>
+          <p>These Terms are governed by the laws of [Your Jurisdiction], without regard to its conflict-of-law principles.</p>
+          <h3>Dispute Resolution</h3>
+          <p>
+            Before pursuing legal action, you agree to attempt to resolve disputes by contacting us at support@gourdo.app with a detailed
+            description of the issue. If the dispute cannot be resolved within 30 days, either party may pursue further remedies.
+          </p>
+          <h3>Jurisdiction &amp; Venue</h3>
+          <p>
+            Any legal proceedings shall be brought exclusively in the state or federal courts located in [Your Jurisdiction]. You consent to
+            the jurisdiction and venue of these courts and waive any objection based on inconvenient forum.
+          </p>
+        </section>
+
+        <section>
+          <h2>Severability</h2>
+          <p>
+            If any provision of these Terms is deemed unenforceable or invalid, that provision shall be modified to the minimum extent necessary
+            to make it enforceable, or if not possible, severed. All remaining provisions shall remain in full force and effect.
+          </p>
+        </section>
+
+        <section>
+          <h2>Entire Agreement</h2>
+          <p>
+            These Terms of Use, together with our Privacy Policy and any other policies published on our website or in the App, constitute the
+            entire agreement between you and Gourdo regarding the use of the Service. Any prior negotiations, understandings, or agreements are
+            superseded by these Terms.
+          </p>
+        </section>
+
+        <section>
+          <h2>Contact Us</h2>
+          <p>If you have questions about these Terms or the Gourdo Service, please contact us:</p>
+          <ul>
+            <li>Email: <a href="mailto:support@gourdo.app">support@gourdo.app</a></li>
+            <li>Legal / Privacy Inquiries: <a href="mailto:privacy@gourdo.app">privacy@gourdo.app</a></li>
+            <li>Mailing Address: [Your Legal Address]</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Acknowledgment</h2>
+          <p>
+            BY DOWNLOADING, ACCESSING, OR USING GOURDO, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS, UNDERSTAND THEM, AND AGREE TO BE BOUND
+            BY THEM. IF YOU DO NOT AGREE, YOU MAY NOT USE GOURDO.
           </p>
         </section>
       </div>

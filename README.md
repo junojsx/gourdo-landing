@@ -1,6 +1,6 @@
-# Touch Grass — Landing Page
+# Gourdo — Landing Page
 
-Landing page for **Touch Grass**, a task-based app shielding iOS app. Built with TypeScript, React, Vite, and React Router.
+Landing page for **Gourdo**, a smart grocery tracking iOS app. Built with TypeScript, React, Vite, and React Router.
 
 ## Run locally
 
@@ -25,4 +25,4 @@ Output is in `dist/`. Preview with `npm run preview`.
 - **Privacy Policy** — How we collect and use data
 - **Terms of Use** — Usage terms and license
 - **Data Deletion** — How to delete app data and request account deletion
-# touch-grass-landing
+# gourdo-landing
