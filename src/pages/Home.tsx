@@ -13,28 +13,29 @@ export default function Home() {
       <section className="heroHero" id="explore">
         <div className="heroHero__inner">
           <h1 className="heroTitle">
-            Touch Grass.
+            Gourdo — Smart Grocery Tracker.
             <br />
-            Earn your time back.
+            Never waste fresh food again.
           </h1>
           <p className="heroSubtitle">
-            Task-based app shielding for iOS. Stay focused, then step outside.
+            Gourdo is your AI-powered grocery companion. Track expiration dates, get AI recipe ideas,
+            and follow expert produce guidance to reduce food waste and save money.
           </p>
 
           <div className="heroSwitch" role="tablist" aria-label="Primary actions">
             <a className="heroSwitch__tab" href="#how-it-works" role="tab" aria-selected="false">
-              Set tasks
+              How it works
             </a>
             <a className="heroSwitch__tab heroSwitch__tab--active" href="#features" role="tab" aria-selected="true">
-              Shield apps
+              Smart tracking
             </a>
             <a className="heroSwitch__tab" href="#download" role="tab" aria-selected="false">
-              Earn access
+              Pricing
             </a>
           </div>
 
           <div className="heroDownloads" id="download">
-            <p className="heroDownloads__label">Get our app</p>
+            <p className="heroDownloads__label">Get Gourdo for iOS</p>
             <div className="heroDownloads__row">
               {/* <a className="storeBadge" href="#" aria-label="Get it on Google Play (dummy link)">
                 <img src={badgeGooglePlay} alt="" />
@@ -47,28 +48,28 @@ export default function Home() {
           </div>
 
           <section className="howItWorks" id="how-it-works" aria-label="How it works">
-            <p className="howItWorks__title">How it works</p>
+            <p className="howItWorks__title">How Gourdo works</p>
             <p className="howItWorks__body">
-              Touch Grass helps you complete meaningful tasks before unlocking distracting apps.
-              Set a goal, get it done, then enjoy your screen time—or better yet, go touch grass.
+              Scan groceries with barcodes or expiry date photos, let Gourdo track everything in your
+              pantry, then get AI-powered recipe ideas and smart notifications before food goes bad.
             </p>
           </section>
 
-          <div className="cardRail" id="features" aria-label="App screenshots">
+          <div className="cardRail" id="features" aria-label="App screenshots and features">
             <div className="cardRail__card">
-              <img src={screen1} alt="Pick distracting apps to lock." loading="lazy" />
+              <img src={screen1} alt="Pantry view showing items with days left until expiration." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--raised">
-              <img src={screen2} alt="Touch Grass welcome screen." loading="lazy" />
+              <img src={screen2} alt="Barcode scanning screen for instant grocery tracking." loading="lazy" />
             </div>
             <div className="cardRail__card">
-              <img src={screen3} alt="Time spent on phone calculation screen." loading="lazy" />
+              <img src={screen3} alt="AI-powered recipe suggestion using expiring ingredients." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--ghost" aria-hidden="true">
-              <img src={screen4} alt="" loading="lazy" />
+              <img src={screen4} alt="Produce guide with storage and ripeness tips." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--ghost" aria-hidden="true">
-              <img src={screen5} alt="" loading="lazy" />
+              <img src={screen5} alt="Smart notification preferences for expiring items." loading="lazy" />
             </div>
           </div>
 
