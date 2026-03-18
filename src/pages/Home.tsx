@@ -57,19 +57,19 @@ export default function Home() {
 
           <div className="cardRail" id="features" aria-label="App screenshots and features">
             <div className="cardRail__card">
-              <img src={screen1} alt="Pantry view showing items with days left until expiration." loading="lazy" />
+              <img src={screen1} alt="Home dashboard with pantry overview and quick stats." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--raised">
-              <img src={screen2} alt="Barcode scanning screen for instant grocery tracking." loading="lazy" />
+              <img src={screen2} alt="Welcome screen with Gourdo logo and sign-in form." loading="lazy" />
             </div>
             <div className="cardRail__card">
-              <img src={screen3} alt="AI-powered recipe suggestion using expiring ingredients." loading="lazy" />
+              <img src={screen3} alt="Pantry inventory list with expiring and expired items." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--ghost" aria-hidden="true">
-              <img src={screen4} alt="Produce guide with storage and ripeness tips." loading="lazy" />
+              <img src={screen4} alt="Recipe list with AI-generated recipes and filters." loading="lazy" />
             </div>
             <div className="cardRail__card cardRail__card--ghost" aria-hidden="true">
-              <img src={screen5} alt="Smart notification preferences for expiring items." loading="lazy" />
+              <img src={screen5} alt="AI recipe result screen with ingredients and instructions." loading="lazy" />
             </div>
           </div>
 
