@@ -36,7 +36,7 @@ export default function Navbar() {
           <span className="navBrand__mark" aria-hidden="true">
             <img src={logo} alt="" className="navBrand__logo" />
           </span>
-          <span className="navBrand__text">Gourdo</span>
+          <span className="navBrand__text text-7xl font-bold">Gourdo</span>
         </Link>
 
         <ul className="navLinks" aria-label="Primary">

@@ -241,8 +241,8 @@ li {
 }
 
 .navBrand__mark {
-  width: 32px;
-  height: 32px;
+  width: 80px;
+  height: 80px;
   display: grid;
   place-items: center;
   border-radius: 10px;
@@ -258,7 +258,7 @@ li {
 }
 
 .navBrand__text {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   font-weight: 800;
 }
 
@@ -274,7 +274,7 @@ li {
 }
 
 .navLink {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   padding: 0.35rem 0.2rem;
 }

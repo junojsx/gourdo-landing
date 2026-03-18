@@ -1,0 +1,34 @@
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+/dist
+/dist-ssr
+*.local
+
+# Vite / env
+.env
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Test coverage
+coverage
+
+# Claude / scratch assets
+/claude/
