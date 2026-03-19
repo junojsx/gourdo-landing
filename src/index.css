@@ -299,7 +299,7 @@ li {
 }
 
 .navLink:hover {
-  color: var(--text);
+  color: white;
 }
 
 .navLogin {
@@ -570,7 +570,7 @@ li {
 }
 
 .landingFooter a:hover {
-  color: var(--text);
+  color: white;
 }
 
 .landingFooter__dot {
