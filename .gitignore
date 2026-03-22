@@ -10,8 +10,10 @@ pnpm-debug.log*
 /dist-ssr
 *.local
 
-# Vite / env
+# Vite / env (secrets — do not commit)
 .env
+.env.*
+!.env.example
 .env.*.local
 
 # TypeScript

@@ -629,6 +629,43 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* Feedback page (UserJot) */
+.feedbackPage__warning {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--ft-crimson, #7e2224), transparent 88%);
+  border: 1px solid color-mix(in oklab, var(--ft-crimson, #7e2224), transparent 65%);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.feedbackPage__cta {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in oklab, var(--primary), transparent 25%);
+  background: linear-gradient(135deg, var(--primary) 0%, color-mix(in oklab, var(--primary), white 18%) 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 30px color-mix(in oklab, var(--graphite), transparent 88%);
+}
+
+.feedbackPage__cta:hover,
+.feedbackPage__cta:focus-visible {
+  outline: none;
+  background: linear-gradient(
+    135deg,
+    var(--success) 0%,
+    color-mix(in oklab, var(--success), white 18%) 100%
+  );
+  border-color: color-mix(in oklab, var(--success), transparent 25%);
+  color: white;
+  box-shadow: 0 12px 30px color-mix(in oklab, var(--success), transparent 72%);
+}
+
 @media (max-width: 920px) {
   .navLinks {
     display: none;

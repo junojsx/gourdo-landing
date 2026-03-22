@@ -83,6 +83,10 @@ export default function Home() {
               •
             </span>
             <a href="/data-deletion">Data deletion</a>
+            <span className="landingFooter__dot" aria-hidden="true">
+              •
+            </span>
+            <a href="/feedback">Feedback</a>
           </footer>
         </div>
       </section>
