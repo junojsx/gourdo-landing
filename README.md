@@ -30,4 +30,12 @@ Output is in `dist/`. Preview with `npm run preview`.
 ## UserJot
 
 Copy `.env.example` to `.env` or `.env.local` and set `VITE_USERJOT_PROJECT_ID` to the **Project ID** from UserJot (**Settings → Project**), e.g. `proj_…`. Do **not** paste your public board URL (`https://….userjot.com`) — that breaks the widget and causes 404s. Restart the dev server after changing env vars.
-# gourdo-landing
+
+## Deployment (SPA routing)
+
+`/feedback`, `/privacy-policy`, etc. are **client-side routes**. The server must fall back to `index.html` for unknown paths, or direct visits and refreshes will **404**.
+
+- **Netlify / Cloudflare Pages:** `public/_redirects` is copied into `dist/` on build (`/* → /index.html`).
+- **Vercel:** `vercel.json` rewrites are included in the repo.
+
+For **GitHub Pages**, S3, or custom nginx/Apache, configure the same “single-page app” fallback to `index.html`.
